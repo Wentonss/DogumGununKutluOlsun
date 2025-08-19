@@ -1,0 +1,182 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hacked By Scofield" />
+  <title>WENTON</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      font-family: 'VT323', monospace;
+      background: #000;
+      color: #fff;
+      position: relative;
+      cursor: pointer;
+    }
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      font-size: 3vmin;
+      font-family: 'VT323', monospace;
+      text-shadow: 0 0 12px #f0f, 0 0 35px #f0f;
+      transition: all 0.35s ease;
+    }
+    button:hover {
+      text-shadow: 0 0 25px #f0f, 0 0 35px #f0f;
+    }
+    video#back {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 105%;
+      min-height: 105%;
+      transform: translate(-50%, -50%);
+      filter: brightness(1.2) contrast(1.1);
+      z-index: -1;
+    }
+    #main {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: table;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .fof {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .fof h1 {
+      font-size: 7vmin;
+      color: #f00;
+      text-shadow: 0 0 12px #f00;
+      margin: 20px 0;
+      animation: glitch 1s linear infinite;
+    }
+    h2, h3, h4 {
+      font-size: 4vmin;
+      color: #00ff00;
+      text-shadow: 0 0 12px #00ff00;
+    }
+    h2 a {
+      color: #00ccff;
+      text-decoration: none;
+      text-shadow: 0 0 6px #00ccff;
+    }
+    h2 a:hover {
+      color: #ff0;
+      text-shadow: 0 0 6px #ff0;
+    }
+    .hacker-rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .hacker-rain::before {
+      content: "0101010101010101010101";
+      position: absolute;
+      top: -200%;
+      width: 300%;
+      height: 300%;
+      opacity: 0.2;
+      animation: rain-fall 55s linear infinite;
+      white-space: nowrap;
+      color: #00ff00;
+      font-family: 'VT323', monospace;
+      font-size: 2.5vmin;
+      text-shadow: 0 0 5px #00ff00;
+    }
+    .hacker-rain::after {
+      content: "0101010101010101010101";
+      position: absolute;
+      top: -150%;
+      width: 200%;
+      height: 200%;
+      opacity: 0.15;
+      animation: rain-fall 75s linear infinite;
+      white-space: nowrap;
+      color: #f0f;
+      font-family: 'VT323', monospace;
+      font-size: 2.6vmin;
+      text-shadow: 0 0 5px #f0f;
+    }
+    @keyframes rain-fall {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(150vh); }
+    }
+    @keyframes glitch {
+      0% { text-shadow: 1px 0 red, -1px 0 cyan; }
+      25% { text-shadow: -1px 0 red, 1px 0 cyan; }
+      50% { text-shadow: 1px 0 red, -1px 0 cyan; }
+      75% { text-shadow: -1px 0 red, 1px 0 cyan; }
+      100% { text-shadow: 1px 0 red, -1px 0 cyan; }
+    }
+    .hacked-message {
+      color: red;
+      font-weight: bold;
+      font-size: 2.5vmin;
+      text-decoration: none;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body onclick="unmuteee()">
+  <div class="hacker-rain"></div>
+
+  <!-- Video Arka Plan -->
+  <video id="back" autoplay loop muted preload="auto" playsinline onclick="unmuteee()">
+    <source src="https://tikcdn.io/ssstik/7353216168720616737" type="video/mp4" />
+    Tarayıcınız video etiketini desteklemiyor.
+  </video>
+
+  <!-- İçerik -->
+  <div id="main" onclick="unmuteee()">
+    <div class="fof">
+      <h1>I AM YUZİW</h1>
+      <h2></h2>
+      <h3>DUO : SCOFİELD | YUZIW | SWON | WENTON</h3>
+      <h4>WEB • PENTESTER • CODER</h4>
+      <br />
+      <p class="hacked-message">HELLO MY FRİEND</p>
+    </div>
+  </div>
+
+  <script>
+    function unmuteee() {
+      const video = document.getElementById("back");
+      video.muted = false;
+      video.play().catch(e => console.log("Oynatma hatası:", e));
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('back');
+      video.play().catch(e => console.log("Video oynatma hatası:", e));
+    });
+  </script>
+</body>
+</html>
