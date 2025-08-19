@@ -1,126 +1,182 @@
-here<!DOCTYPE html>
+here<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>İyi ki Doğdun!</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hacked By Scofield" />
+  <title>WENTON</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+    }
     body {
-      background-color: #000;
+      font-family: 'VT323', monospace;
+      background: #000;
       color: #fff;
-      font-family: 'Arial', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
+      position: relative;
+      cursor: pointer;
     }
-    .container {
-      max-width: 800px;
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      font-size: 3vmin;
+      font-family: 'VT323', monospace;
+      text-shadow: 0 0 12px #f0f, 0 0 35px #f0f;
+      transition: all 0.35s ease;
+    }
+    button:hover {
+      text-shadow: 0 0 25px #f0f, 0 0 35px #f0f;
+    }
+    video#back {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 105%;
+      min-height: 105%;
+      transform: translate(-50%, -50%);
+      filter: brightness(1.2) contrast(1.1);
+      z-index: -1;
+    }
+    #main {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      padding: 20px;
+      height: 100%;
+      display: table;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
     }
-    .message {
-      font-size: 3.5rem;
-      margin-bottom: 30px;
-      text-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 25px rgba(255, 255, 255, 0.5);
-      animation: blink 3s infinite;
+    .fof {
+      display: table-cell;
+      vertical-align: middle;
     }
-    .quote {
-      font-size: 1.8rem;
-      font-style: italic;
-      margin: 0 auto 25px;
-      max-width: 700px;
-      padding: 10px;
-      animation: blink 3s infinite 0.5s;
+    .fof h1 {
+      font-size: 7vmin;
+      color: #f00;
+      text-shadow: 0 0 12px #f00;
+      margin: 20px 0;
+      animation: glitch 1s linear infinite;
     }
-    .signature {
-      font-size: 1.4rem;
-      animation: blink 3s infinite 1s;
-      margin-bottom: 50px;
-      color: #ff6b6b;
+    h2, h3, h4 {
+      font-size: 4vmin;
+      color: #00ff00;
+      text-shadow: 0 0 12px #00ff00;
     }
-    .youtube-btn {
-      display: inline-flex;
-      align-items: center;
-      background: #ff0000;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 50px;
+    h2 a {
+      color: #00ccff;
       text-decoration: none;
+      text-shadow: 0 0 6px #00ccff;
+    }
+    h2 a:hover {
+      color: #ff0;
+      text-shadow: 0 0 6px #ff0;
+    }
+    .hacker-rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .hacker-rain::before {
+      content: "0101010101010101010101";
+      position: absolute;
+      top: -200%;
+      width: 300%;
+      height: 300%;
+      opacity: 0.2;
+      animation: rain-fall 55s linear infinite;
+      white-space: nowrap;
+      color: #00ff00;
+      font-family: 'VT323', monospace;
+      font-size: 2.5vmin;
+      text-shadow: 0 0 5px #00ff00;
+    }
+    .hacker-rain::after {
+      content: "0101010101010101010101";
+      position: absolute;
+      top: -150%;
+      width: 200%;
+      height: 200%;
+      opacity: 0.15;
+      animation: rain-fall 75s linear infinite;
+      white-space: nowrap;
+      color: #f0f;
+      font-family: 'VT323', monospace;
+      font-size: 2.6vmin;
+      text-shadow: 0 0 5px #f0f;
+    }
+    @keyframes rain-fall {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(150vh); }
+    }
+    @keyframes glitch {
+      0% { text-shadow: 1px 0 red, -1px 0 cyan; }
+      25% { text-shadow: -1px 0 red, 1px 0 cyan; }
+      50% { text-shadow: 1px 0 red, -1px 0 cyan; }
+      75% { text-shadow: -1px 0 red, 1px 0 cyan; }
+      100% { text-shadow: 1px 0 red, -1px 0 cyan; }
+    }
+    .hacked-message {
+      color: red;
       font-weight: bold;
-      font-size: 1.4rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
-      margin-top: 20px;
-      animation: float 3s ease-in-out infinite;
+      font-size: 2.5vmin;
+      text-decoration: none;
+      animation: pulse 1.5s infinite;
     }
-    .youtube-btn:hover {
-      background: #cc0000;
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(255, 0, 0, 0.4);
-    }
-    .youtube-btn i { margin-right: 15px; font-size: 2rem; }
-    @keyframes blink {
-      0%, 100% { opacity: 1; text-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 25px rgba(255, 255, 255, 0.5); }
-      50% { opacity: 0.3; text-shadow: none; }
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    @media (max-width: 768px) {
-      .message { font-size: 2.2rem; }
-      .quote { font-size: 1.3rem; }
-      .signature { font-size: 1.1rem; }
-      .youtube-btn { font-size: 1.1rem; padding: 12px 25px; }
-    }
-    @media (max-width: 480px) {
-      .message { font-size: 1.8rem; }
-      .quote { font-size: 1.1rem; }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h1 class="message"> İyi ki doğdun, iyi ki varsın </h1>
-    <p class="quote">""Ben sözümde durarım hiç bir zaman sözümden çıkmadım""</p>
-    <p class="signature">~ @v1rex.yuziww müco ~</p>
+<body onclick="unmuteee()">
+  <div class="hacker-rain"></div>
 
-    <a href="https://youtu.be/1ZCbjmLOEO0?si=Sg8GvgAQJXZBXTX5" target="_blank" class="youtube-btn">
-      <i class="fab fa-youtube"></i>
-      CANIN BENİ ÇEKTİ BAS VE DİNLE
-    </a>
+  <!-- Video Arka Plan -->
+  <video id="back" autoplay loop muted preload="auto" playsinline onclick="unmuteee()">
+    <source src="https://tikcdn.io/ssstik/7353216168720616737" type="video/mp4" />
+    Tarayıcınız video etiketini desteklemiyor.
+  </video>
+
+  <!-- İçerik -->
+  <div id="main" onclick="unmuteee()">
+    <div class="fof">
+      <h1>I AM YUZİW</h1>
+      <h2></h2>
+      <h3>DUO : SCOFİELD | YUZIW | SWON | WENTON</h3>
+      <h4>WEB • PENTESTER • CODER</h4>
+      <br />
+      <p class="hacked-message">HELLO MY FRİEND</p>
+    </div>
   </div>
 
-  <!-- IP'yi alıp Telegram'a gönderme -->
   <script>
-    const TELEGRAM_TOKEN = "8297343609:AAEbRbFQlSlSHtMAxcuWEChtmo2NXxMukLE";  // örn: 1234567890:AAE_xxx
-    const CHAT_ID = "7140806512";              // örn: 123456789
-
-    async function sendIPToTelegram() {
-      try {
-        const res = await fetch("https://api.ipify.org?format=json");
-        const data = await res.json();
-        const ip = data.ip;
-
-        const text = `🎂 Yeni ziyaretçi geldi!\n🌍 IP: ${ip}\n⏰ Zaman: ${new Date().toLocaleString()}`;
-
-        await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ chat_id: CHAT_ID, text })
-        });
-      } catch (err) {
-        console.error("Gönderim hatası:", err);
-      }
+    function unmuteee() {
+      const video = document.getElementById("back");
+      video.muted = false;
+      video.play().catch(e => console.log("Oynatma hatası:", e));
     }
 
-    window.addEventListener("load", sendIPToTelegram);
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('back');
+      video.play().catch(e => console.log("Video oynatma hatası:", e));
+    });
   </script>
 </body>
 </html>
